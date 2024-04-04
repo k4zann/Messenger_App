@@ -56,9 +56,17 @@ class _LoginPageState extends State<LoginPage> {
                     ),
                   ),
                   const SizedBox(height: 20),
-                  LoginTextField(controller: _emailController, hintText: "Email", obscureText: false),
+                  LoginTextField(
+                      controller: _emailController,
+                      hintText: "Почта",
+                      obscureText: false
+                  ),
                   const SizedBox(height: 20),
-                  LoginTextField(controller: _passwordController, hintText: "Password", obscureText: true),
+                  LoginTextField(
+                      controller: _passwordController,
+                      hintText: "Пароль",
+                      obscureText: true
+                  ),
                   const SizedBox(height: 20),
                   LoginButton(
                       onTap: (){
