@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "94057892419",
+    "project_id": "messenger-a8707",
+    "storage_bucket": "messenger-a8707.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:94057892419:android:930a0212f0ad6082aaa2f6",
+        "android_client_info": {
+          "package_name": "com.example.my_flutter_project"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB_kMA0pbFI-uMYRCkglO9xU5ILgxUBfyU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
