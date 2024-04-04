@@ -32,23 +32,15 @@ class AuthenticationService extends ChangeNotifier {
         password: password,
       );
 
-      // Get a reference to the 'users' collection
-      CollectionReference users = _firebaseStore.collection('users');
+      await userCredential.user!.updateDisplayName(name);
 
-      // Add user data to Firestore with an auto-generated document ID
-      DocumentReference userDocRef = await users.add({
+      _firebaseStore.collection('users').doc(userCredential.user!.uid).set({
+        'uid': userCredential.user!.uid,
         'name': name,
         'email': email,
       });
 
-      // Get the auto-generated document ID and use it as an integer ID
-      int userId = userDocRef.id as int;
-
-      // Update the document with the integer ID
-      await userDocRef.update({'id': userId});
-
       return userCredential;
-
     } on FirebaseAuthException catch (e) {
       throw Exception(e.message);
     }
