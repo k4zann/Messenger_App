@@ -36,7 +36,7 @@ class AuthenticationService extends ChangeNotifier {
         'uid': userCredential.user!.uid,
         'name': name,
         'email': email,
-      }, SetOptions(merge: true));
+      });
 
       return userCredential;
 
