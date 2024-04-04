@@ -30,13 +30,22 @@ class AuthenticationService extends ChangeNotifier {
       final UserCredential userCredential = await _firebaseAuth.createUserWithEmailAndPassword(
         email: email,
         password: password,
-      ) ;
+      );
 
-      _firebaseStore.collection('users').doc(userCredential.user!.uid).set({
-        'uid': userCredential.user!.uid,
+      // Get a reference to the 'users' collection
+      CollectionReference users = _firebaseStore.collection('users');
+
+      // Add user data to Firestore with an auto-generated document ID
+      DocumentReference userDocRef = await users.add({
         'name': name,
         'email': email,
       });
+
+      // Get the auto-generated document ID and use it as an integer ID
+      int userId = userDocRef.id as int;
+
+      // Update the document with the integer ID
+      await userDocRef.update({'id': userId});
 
       return userCredential;
 
@@ -44,6 +53,7 @@ class AuthenticationService extends ChangeNotifier {
       throw Exception(e.message);
     }
   }
+
 
 
   Future<void> logout() async {

@@ -17,6 +17,12 @@ class _RegistrationPageState extends State<RegistrationPage> {
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
 
+  @override
+  void dispose() {
+    super.dispose();
+  }
+
+
   void register() async {
     final authenticateService = Provider.of<AuthenticationService>(context, listen: false);
 
@@ -27,11 +33,13 @@ class _RegistrationPageState extends State<RegistrationPage> {
         _passwordController.text.trim(),
       );
     } catch (e) {
-      ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(
-          content: Text(e.toString()),
-        ),
-      );
+      if (mounted) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(
+            content: Text("Неверные данные"),
+          ),
+        );
+      }
     }
   }
 

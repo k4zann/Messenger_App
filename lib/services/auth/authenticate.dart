@@ -18,7 +18,7 @@ class Authenticate extends StatelessWidget {
               child: CircularProgressIndicator(),
             );
           } else if (snapshot.hasData) {
-            return const MyHomePage(title: '',);
+            return const HomePage();
           } else if (snapshot.hasError) {
             return const Center(
               child: Text('An error occurred!'),

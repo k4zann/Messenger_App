@@ -16,6 +16,11 @@ class _LoginPageState extends State<LoginPage> {
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
 
+  @override
+  void dispose() {
+    super.dispose();
+  }
+
   void login() {
     final authenticateService = Provider.of<AuthenticationService>(context, listen: false);
 
@@ -26,8 +31,8 @@ class _LoginPageState extends State<LoginPage> {
       );
     } catch (e) {
       ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(
-          content: Text(e.toString()),
+        const SnackBar(
+          content: Text("Неверные данные"),
         ),
       );
 
