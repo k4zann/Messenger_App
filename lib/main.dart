@@ -4,7 +4,6 @@ import 'package:my_flutter_project/services/auth/auth_service.dart';
 import 'package:my_flutter_project/services/auth/authenticate.dart';
 import 'package:provider/provider.dart';
 import 'services/firebase_options/firebase_options.dart';
-import 'package:my_flutter_project/ui/screens/home_page/home_page.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -20,6 +19,7 @@ void main() async {
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
+  @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,

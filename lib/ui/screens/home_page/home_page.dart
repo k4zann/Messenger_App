@@ -176,7 +176,7 @@ class _HomePageState extends State<HomePage> {
           ),
           subtitle: Text(
             lastMessage,
-            style: TextStyle(
+            style: const TextStyle(
                 color: Color(0xff5E7A90),
                 fontSize: 12,
                 fontWeight: FontWeight.w500
@@ -206,9 +206,9 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Padding(
-            padding: const EdgeInsets.only(left: 10.0),
-            child: const Text(
+          title: const Padding(
+            padding: EdgeInsets.only(left: 10.0),
+            child: Text(
                 'Чаты',
                 style: TextStyle(
                     color: Colors.black,
@@ -222,7 +222,7 @@ class _HomePageState extends State<HomePage> {
               onPressed: () {
                 _logout();
               },
-              icon: Icon(Icons.logout),
+              icon: const Icon(Icons.logout),
             )
           ],
         ),

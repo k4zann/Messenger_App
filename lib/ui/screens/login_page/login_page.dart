@@ -83,7 +83,7 @@ class _LoginPageState extends State<LoginPage> {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Text(
+                      const Text(
                         "У вас нет аккаунта?",
                         style: TextStyle(
                           fontSize: 16,
@@ -91,7 +91,7 @@ class _LoginPageState extends State<LoginPage> {
                       ),
                       TextButton(
                         onPressed: widget.onPressed,
-                        child: Text(
+                        child: const Text(
                           'Зарегистрироваться',
                           style: TextStyle(
                             fontSize: 16,

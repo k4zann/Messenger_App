@@ -57,7 +57,7 @@ class _RegistrationPageState extends State<RegistrationPage> {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   const Text(
-                    'Вход',
+                    'Регистрация',
                     style: TextStyle(
                       fontSize: 24,
                       fontWeight: FontWeight.bold,
